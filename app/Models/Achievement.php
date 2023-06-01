@@ -10,4 +10,12 @@ class Achievement extends Model
     use HasFactory;
 
     protected $guarded = ['id'];
+
+    /**
+     * User achievements
+     */
+    public function users()
+    {
+        return $this->belongsToMany('App\Models\User', 'user_achievements');
+    }
 }
