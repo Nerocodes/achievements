@@ -44,7 +44,7 @@ class AuthenticationController extends Controller
             'token' => $token
         ];
 
-        return Response::send(true, 201, 'User created successfully', $responseData);
+        return $this->sendApiResponse(201, 'User created successfully', $responseData);
     }
 
     /**
@@ -59,7 +59,7 @@ class AuthenticationController extends Controller
         $credentials = $request->validated();
 
         if(!Auth::attempt($credentials)) {
-            return Response::send(false, 401, 'Invalid credentials');
+            return response()->json(['error' => 'Invalid credentials'], 401);
          }
 
          $user = $request->user();
@@ -71,6 +71,6 @@ class AuthenticationController extends Controller
             'token' => $token
          ];
 
-        return Response::send(true, 200, 'Login successful', $data);
+         return $this->sendApiResponse(200, 'Login successful', $data);
     }
 }

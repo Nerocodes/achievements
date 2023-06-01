@@ -20,3 +20,7 @@ use Illuminate\Support\Facades\Route;
 
 Route::post('register', 'AuthenticationController@register');
 Route::post('login', 'AuthenticationController@login');
+
+Route::group(['middleware' => 'auth:sanctum'], function(){
+    Route::post('sales', 'SaleController@purchase');
+});

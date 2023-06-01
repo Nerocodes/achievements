@@ -14,17 +14,8 @@ class AuthenticationService
      */
     public function createUserToken($user)
     {
-        $tokenObject = $user->createToken('Personal Access Token');
-        $token = $tokenObject->token;
-        $token->expires_at = Carbon::now()->addDay();
-        $token->save();
+        $token = $user->createToken('Personal Access Token');
 
-        return [
-            'access_token' => $tokenObject->accessToken,
-            'type' => 'Bearer',
-            'expires_at' => Carbon::parse(
-                $token->expires_at
-            )->toDateTimeString()
-        ];
+        return $token->plainTextToken;
     }
 }

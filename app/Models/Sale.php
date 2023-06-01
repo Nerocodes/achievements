@@ -8,4 +8,8 @@ use Illuminate\Database\Eloquent\Model;
 class Sale extends Model
 {
     use HasFactory;
+
+    const SUCCESSFUL = 'successful';
+
+    protected $guarded = ['id'];
 }
