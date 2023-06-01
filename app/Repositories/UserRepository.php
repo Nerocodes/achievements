@@ -21,4 +21,14 @@ class UserRepository implements UserRepositoryInterface
         $data['password'] = Hash::make($data['password']);
         return User::create($data);
     }
+
+    /**
+     * Get user by id
+     * 
+     * @param int $userId
+     */
+    public function getUserById($userId)
+    {
+        return User::find($userId);
+    }
 }

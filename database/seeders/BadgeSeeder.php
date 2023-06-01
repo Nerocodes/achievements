@@ -18,23 +18,23 @@ class BadgeSeeder extends Seeder
         $badges = [
             [
                 'name' => 'Beginner',
-                'no_of_achievements_to_unlock' => 1
+                'achievement_requirement' => 1
             ],
             [
                 'name' => 'Intermediate',
-                'no_of_achievements_to_unlock' => 5
+                'achievement_requirement' => 5
             ],
             [
                 'name' => 'Advanced',
-                'no_of_achievements_to_unlock' => 8
+                'achievement_requirement' => 8
             ],
             [
                 'name' => 'Expert',
-                'no_of_achievements_to_unlock' => 10
+                'achievement_requirement' => 10
             ],
             [
                 'name' => 'Veteran',
-                'no_of_achievements_to_unlock' => 20
+                'achievement_requirement' => 20
             ]
         ];
 

@@ -2,6 +2,10 @@
 
 namespace App\Providers;
 
+use App\Repositories\AchievementRepository;
+use App\Repositories\BadgeRepository;
+use App\Repositories\Contracts\AchievementRepositoryInterface;
+use App\Repositories\Contracts\BadgeRepositoryInterface;
 use App\Repositories\Contracts\SaleRepositoryInterface;
 use App\Repositories\Contracts\UserRepositoryInterface;
 use App\Repositories\SaleRepository;
@@ -19,6 +23,8 @@ class RepositoryServiceProvider extends ServiceProvider
     {
         $this->app->bind(UserRepositoryInterface::class, UserRepository::class);
         $this->app->bind(SaleRepositoryInterface::class, SaleRepository::class);
+        $this->app->bind(AchievementRepositoryInterface::class, AchievementRepository::class);
+        $this->app->bind(BadgeRepositoryInterface::class, BadgeRepository::class);
     }
 
     /**

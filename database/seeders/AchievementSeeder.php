@@ -18,39 +18,39 @@ class AchievementSeeder extends Seeder
         $achievements = [
             [
                 'name' => 'First Purchase',
-                'no_of_purchases_to_unlock' => 1
+                'purchase_requirement' => 1
             ],
             [
                 'name' => '5 Purchases',
-                'no_of_purchases_to_unlock' => 5
+                'purchase_requirement' => 5
             ],
             [
                 'name' => '10 Purchases',
-                'no_of_purchases_to_unlock' => 10
+                'purchase_requirement' => 10
             ],
             [
                 'name' => '15 Purchases',
-                'no_of_purchases_to_unlock' => 15
+                'purchase_requirement' => 15
             ],
             [
                 'name' => '20 Purchases',
-                'no_of_purchases_to_unlock' => 20
+                'purchase_requirement' => 20
             ],
             [
                 'name' => '25 Purchases',
-                'no_of_purchases_to_unlock' => 25
+                'purchase_requirement' => 25
             ],
             [
                 'name' => '30 Purchases',
-                'no_of_purchases_to_unlock' => 30
+                'purchase_requirement' => 30
             ],
             [
                 'name' => '35 Purchases',
-                'no_of_purchases_to_unlock' => 35
+                'purchase_requirement' => 35
             ],
             [
                 'name' => '40 Purchases',
-                'no_of_purchases_to_unlock' => 40
+                'purchase_requirement' => 40
             ]
         ];
 

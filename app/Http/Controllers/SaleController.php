@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Events\NewPurchase;
 use App\Repositories\Contracts\SaleRepositoryInterface;
 use Illuminate\Http\Request;
 
@@ -31,6 +32,8 @@ class SaleController extends Controller
         $user = $request->user();
 
         $sale = $this->salesRepository->create($user->id);
+
+        event(new NewPurchase($sale->user_id));
 
         return $this->sendApiResponse(201, 'Purchased successfully', $sale);
     }

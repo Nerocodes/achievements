@@ -16,7 +16,7 @@ return new class extends Migration
         Schema::create('badges', function (Blueprint $table) {
             $table->id();
             $table->string('name')->unique();
-            $table->integer('no_of_achievements_to_unlock');
+            $table->integer('achievement_requirement');
             $table->timestamps();
         });
     }
