@@ -53,6 +53,10 @@ class Handler extends ExceptionHandler
                     'message' => $e->getMessage(),
                 ], $e->status);
             }
+
+            return response()->json([
+                'message' => 'An error occured'
+            ], 500);
         });
     }
 }
