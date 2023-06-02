@@ -29,6 +29,6 @@ class AchievementController extends Controller
     {
         $data = $this->achievementService->getUserAchievementDetails($userId);
 
-        return $this->sendApiResponse(201, 'User created successfully', $data);
+        return $this->sendApiResponse(200, 'Request Successful', $data);
     }
 }

@@ -30,5 +30,9 @@ class SaleTest extends TestCase
         ]);
 
         $response->assertStatus(201);
+
+        $this->assertDatabaseHas('sales', [
+            'user_id' => $decodedJson['data']['user']['id']
+        ]);
     }
 }
