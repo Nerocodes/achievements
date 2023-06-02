@@ -32,13 +32,17 @@ class AchievementService
         $user = $this->userRepository->getUserById($userId);
 
         $unlockedAchievements = $user->achievements()->pluck('name');
+
         $nextAvailableAchievements = Achievement::whereDoesntHave('users', function ($query) use ($user) {
             $query->where('user_id', $user->id);
         })->pluck('name');
+
         $currentBadge = $user->badges()->latest('user_badges.id')->pluck('name')->first();
+
         $nextBadge = Badge::whereDoesntHave('users', function ($query) use ($user) {
             $query->where('user_id', $user->id);
         })->first();
+        
         $remainingToUnlockNextBadge = $nextBadge->achievement_requirement - count($unlockedAchievements);
 
         return [
